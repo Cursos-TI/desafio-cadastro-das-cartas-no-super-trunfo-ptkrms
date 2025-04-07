@@ -35,9 +35,9 @@ int main() {
     printf("Desafio Super Trunfo - Cadastro de Cartas de Cidades\n Digite o estado da carta 1 usando o nome do estado de A a H: ");
     scanf(" %c", &estado1);
     printf("Digite o código da carta 1 usando o código do estado com o código da cidade. A combinação forma o código da carta (ex: A01, B02): ");
-    scanf("%s", &codigoCarta1);
+    scanf("%s", codigoCarta1);
     printf("Digite o nome da cidade da carta 1: ");
-    scanf("%s", &nomeCidade1);
+    scanf("%s", nomeCidade1);
     printf("Digite a população da carta 1: ");
     scanf("%d", &populacao1);
     printf("Digite a área da carta 1 em km²: ");
@@ -49,9 +49,9 @@ int main() {
     printf("Digite o estado da carta 2 usando o nome do estado de A a H: ");
     scanf(" %c", &estado2);
     printf("Digite o código da carta 2 usando o código do estado com o código da cidade. A combinação forma o código da carta (ex: A01, B02): ");
-    scanf("%s", &codigoCarta2);
+    scanf("%s", codigoCarta2);
     printf("Digite o nome da cidade da carta 2: ");
-    scanf("%s", &nomeCidade2);
+    scanf("%s", nomeCidade2);
     printf("Digite a população da carta 2: ");
     scanf("%d", &populacao2);
     printf("Digite a área da carta 2 em km²: ");
