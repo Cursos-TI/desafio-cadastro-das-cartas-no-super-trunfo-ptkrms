@@ -17,6 +17,7 @@ int main() {
     float pib1;
     int numeroPontosTuristicos1;
     float densidadePopulacional1;
+    double inversoDensidade1;
     float pibPerCapita1;
 
     //definição da Estrutura da Carta 2 e criação de variáveis:
@@ -28,6 +29,7 @@ int main() {
     float pib2;
     int numeroPontosTuristicos2;
     float densidadePopulacional2;
+    double inversoDensidade2;
     float pibPerCapita2;
 
     //declarando variavel super-poder
@@ -78,17 +80,19 @@ int main() {
     densidadePopulacional2 = (float) populacao2 / area2;
     pibPerCapita1 = (float) pib1 / populacao1;
     pibPerCapita2 = (float) pib2 / populacao2;
+    inversoDensidade1 = 1.0 / densidadePopulacional1;
+    inversoDensidade2 = 1.0 / densidadePopulacional2;
 
     //calculando superpoder:
-    superPoder1 = (float) (populacao1 + area1 + pib1 + numeroPontosTuristicos1 + (1/densidadePopulacional1) + pibPerCapita1);
-    superPoder2 = (float) (populacao2 + area2 + pib2 + numeroPontosTuristicos2 + (1/densidadePopulacional2) + pibPerCapita2);
+    superPoder1 = (float) (populacao1 + area1 + pib1 + numeroPontosTuristicos1 + inversoDensidade1 + pibPerCapita1);
+    superPoder2 = (float) (populacao2 + area2 + pib2 + numeroPontosTuristicos2 + inversoDensidade2 + pibPerCapita2);
 
     //comparando os resultados:
     resultadoPopulacao = populacao1 > populacao2;
     resultadoArea = area1 > area2;
     resultadoPib = pib1 > pib2;
     resultadoPontosTuristicos = numeroPontosTuristicos1 > numeroPontosTuristicos2;
-    resultadoDensidadePopulacional = (1/densidadePopulacional1) < (1/densidadePopulacional2);
+    resultadoDensidadePopulacional = densidadePopulacional1 < densidadePopulacional2; // menor densidade é melhor
     resultadoPibPerCapita = pibPerCapita1 > pibPerCapita2;
     resultadoSuperPoder = superPoder1 > superPoder2;
 
@@ -125,7 +129,6 @@ int main() {
     printf("O PIB per capita da carta 1 é maior que o da carta 2? %d\n", resultadoPibPerCapita);
     printf("O super poder da carta 1 é maior que o da carta 2? %d\n", resultadoSuperPoder);
 
-
-
+    
     return 0;
 }
